@@ -16,7 +16,6 @@ import android.view.Gravity
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
-import com.easyapps.richeditorlib.R
 import com.easyapps.richeditorlib.helpers.Helper
 import com.easyapps.richeditorlib.inner.Html
 import com.easyapps.richeditorlib.interfaces.FontSizeListener
@@ -60,7 +59,8 @@ class RichEditText : AppCompatEditText {
         gravity = Gravity.START
         autoLinkMask = Linkify.ALL
         inputType = (EditorInfo.TYPE_CLASS_TEXT or EditorInfo.TYPE_TEXT_FLAG_MULTI_LINE
-                or EditorInfo.TYPE_TEXT_FLAG_NO_SUGGESTIONS)
+                or EditorInfo.TYPE_TEXT_FLAG_NO_SUGGESTIONS or EditorInfo.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD)
+        typeface = Typeface.DEFAULT
         setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSize)
         setTextColor(foreColor)
         setHint(hint)
